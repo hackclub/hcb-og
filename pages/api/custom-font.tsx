@@ -4,12 +4,12 @@ export const config = {
   runtime: 'edge',
 }
 
-const font = fetch(new URL('../../assets/TYPEWR__.TTF', import.meta.url)).then(
+const regular = fetch(new URL('../../public/PhantomSans0.8-Regular.ttf', import.meta.url)).then(
   (res) => res.arrayBuffer()
 )
 
 export default async function handler() {
-  const fontData = await font
+  const fontData = await regular
 
   return new ImageResponse(
     (
@@ -19,7 +19,7 @@ export default async function handler() {
           height: '100%',
           width: '100%',
           fontSize: 100,
-          fontFamily: 'Typewriter',
+          fontFamily: '"Phantom Sans 0.8", "Phantom Sans", Phantom Sans 0.8, Phantom Sans, Regular',
           paddingTop: '100px',
           paddingLeft: '50px',
         }}
@@ -32,7 +32,7 @@ export default async function handler() {
       height: 630,
       fonts: [
         {
-          name: 'Typewriter',
+          name: 'Phantom Sans',
           data: fontData,
           style: 'normal',
         },
