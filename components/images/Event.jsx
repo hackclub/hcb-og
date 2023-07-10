@@ -142,6 +142,8 @@ Image.size = {
 
 Image.fetchProps = async (slug = 'hq') => {
     const data = await fetch(`https://bank.hackclub.com/api/v3/organizations/${slug}`).then(r => r.json());
+    console.log({slug})
+    console.log({data})
 
     return {
         name: data.name,
@@ -153,7 +155,7 @@ Image.fetchProps = async (slug = 'hq') => {
 }
 
 Image.fetchFonts = async () => {
-    const [regular, medium, bold] = Promise.all([
+    const [regular, medium, bold] = await Promise.all([
         "https://cloud-mj2t536qv-hack-club-bot.vercel.app/0phantomsans0.8-regular.ttf",
         "https://cloud-3rudtqz3t-hack-club-bot.vercel.app/0phantomsans0.8-medium.ttf",
         "https://cloud-mj2t536qv-hack-club-bot.vercel.app/1phantomsans0.8-bold.ttf"

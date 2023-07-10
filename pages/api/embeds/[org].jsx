@@ -6,5 +6,6 @@ export const config = {
 }
 
 export default async function handler(req) {
-    return imageHandler(Event, [handler(Event, req.nextUrl.searchParams.get('org'))]);
+    const slug = new URL(req.url).searchParams.get('org');
+    return imageHandler(Event, [slug]);
 }
