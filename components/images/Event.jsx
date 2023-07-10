@@ -142,8 +142,6 @@ Image.size = {
 
 Image.fetchProps = async (slug = 'hq') => {
     const data = await fetch(`https://bank.hackclub.com/api/v3/organizations/${slug}`).then(r => r.json());
-    console.log({slug})
-    console.log({data})
 
     return {
         name: data.name,
