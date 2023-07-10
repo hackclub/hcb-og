@@ -6,6 +6,8 @@ export const config = {
 }
 
 export default async function handler(req) {
-    const slug = new URL(req.url).searchParams.get('org');
+    const paths = new URL(req.url).pathname.split('/');
+    const index = paths.indexOf('embeds');
+    const slug = paths[index + 1];
     return imageHandler(Event, [slug]);
 }
