@@ -8,7 +8,7 @@ Well now Hack Club Bank has them!
 
 ![](https://cloud-opt13jiz5-hack-club-bot.vercel.app/0screenshot_2023-07-11_at_5.04.13_pm.png)
 
-We're using `@vercel/og` & Next.js to do this. Data is pulled from Bank's Transparency API.
+We're using `@vercel/og` & Next.js to do this. Data is pulled from [Bank's Transparency API](https://bank.hackclub.com/docs/api/v3).
 
 Bug fixes & issue reports are much appreciated; we pulled an all-nighter to build this during a HQ internal hackathon:
 
