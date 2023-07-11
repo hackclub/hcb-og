@@ -1,57 +1,15 @@
----
-name: Open Graph Image Generation
-slug: og-image-generation
-description: Compute and generate dynamic social card images with React components.
-framework: Next.js
-useCase: Edge Functions
-css: Tailwind
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/edge-functions/vercel-og-nextjs&project-name=vercel-og-nextjs&repository-name=vercel-og-nextjs
-demoUrl: https://og-examples.vercel.sh/api/static
-relatedTemplates:
-  - nextjs-boilerplate
-  - aws-s3-image-upload-nextjs
-  - platforms-starter-kit
-  - blog-starter-kit
----
+# OG Images for Hack Club Bank
 
-# Vercel OG + Next.js
+All the OGs like to have cool preview images, such as:
 
-This example shows how to use [Vercel OG](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation) with Next.js.
+![](https://cloud-opt13jiz5-hack-club-bot.vercel.app/1screenshot_2023-07-11_at_5.04.04_pm.png)
 
-## Demo
+Well now Hack Club Bank has them! 
 
-- [Static Text](https://og-examples.vercel.sh/api/static)
-- [Vercel Card](https://og-examples.vercel.sh/api/vercel)
-- [Dynamic Text from URL Query](https://og-examples.vercel.sh/api/param)
-- [Embed SVG Image](https://og-examples.vercel.sh/api/image-svg)
-- [Dynamic PNG Image Based on URL Queries](https://og-examples.vercel.sh/api/dynamic-image?username=vercel)
-- [Custom Font](https://og-examples.vercel.sh/api/custom-font)
-- [Emoji](https://og-examples.vercel.sh/api/emoji)
-- [Languages](https://og-examples.vercel.sh/api/language)
-- [Encrypted Token](https://og-examples.vercel.sh/encrypted/a)
+![](https://cloud-opt13jiz5-hack-club-bot.vercel.app/0screenshot_2023-07-11_at_5.04.13_pm.png)
 
-## How to Use
+We're using `@vercel/og` & Next.js to do this. Data is pulled from Bank's Transparency API.
 
-You can choose from one of the following two methods to use this repository:
+Bug fixes & issue reports are much appreciated; we pulled an all-nighter to build this during a HQ internal hackathon:
 
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/edge-functions/vercel-og-nextjs&project-name=vercel-og-nextjs&repository-name=vercel-og-nextjs)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/edge-functions/vercel-og-nextjs
-```
-
-Next, run Next.js in development mode:
-
-```bash
-pnpm dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=edge-middleware-eap) ([Documentation](https://nextjs.org/docs/deployment)).
+![](https://cloud-ehafn7pss-hack-club-bot.vercel.app/0image.png)
