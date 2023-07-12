@@ -12,4 +12,4 @@ We're using `@vercel/og` & Next.js to do this. Data is pulled from [Bank's Trans
 
 Bug fixes & issue reports are much appreciated; we pulled an all-nighter to build this during a HQ internal hackathon:
 
-![](https://cloud-ehafn7pss-hack-club-bot.vercel.app/0image.png)
+![Hackathon!](https://cloud-ehafn7pss-hack-club-bot.vercel.app/0image.png)
