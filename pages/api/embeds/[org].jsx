@@ -1,4 +1,4 @@
-import { Event } from '../../../components/images/Event'
+import { Event } from '../../../components/images/event'
 import { imageHandler } from '../../../components/images/imageHandler'
 
 export const config = {
