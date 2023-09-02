@@ -98,7 +98,7 @@ function Image({ avatars, name, balance, totalRaised, background, preview = fals
                         flexDirection: 'column',
                         gap: '4px'
                     }}>
-                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>${balance.toLocaleString()}</h3>
+                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>{balance.toLocaleString("en", { style: "currency", currency: "USD" })}</h3>
                         <span style={{ color: '#E5D1D1', fontSize: '58px', fontFamily: '"Phantom Sans 0.7"' }}>Balance</span>
                     </div>
                     <div style={{
@@ -106,7 +106,7 @@ function Image({ avatars, name, balance, totalRaised, background, preview = fals
                         flexDirection: 'column',
                         gap: '4px'
                     }}>
-                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>${totalRaised.toLocaleString()}</h3>
+                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>{totalRaised.toLocaleString("en", { style: "currency", currency: "USD" })}</h3>
                         <span style={{ color: '#E5D1D1', fontSize: '58px', fontFamily: '"Phantom Sans 0.7"' }}>Total Raised</span>
                     </div>
                 </div>
