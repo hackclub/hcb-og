@@ -10,8 +10,6 @@ export async function imageHandler (image, propsArgs) {
     const Component = image;
 
     const imageResponse = new ImageResponse(<Component {...props} />, { fonts, ...image.size });
-    
-    console.log('imageHandler end');
 
     return imageResponse;
 }
