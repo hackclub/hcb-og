@@ -153,10 +153,11 @@ Image.fetchProps = async (slug = 'hq') => {
 }
 
 Image.fetchFonts = async () => {
+    // Bundled with the edge function; see https://vercel.com/kb/guide/using-custom-font
     const [regular, medium, bold] = await Promise.all([
-        "https://cloud-mj2t536qv-hack-club-bot.vercel.app/0phantomsans0.8-regular.ttf",
-        "https://cloud-3rudtqz3t-hack-club-bot.vercel.app/0phantomsans0.8-medium.ttf",
-        "https://cloud-mj2t536qv-hack-club-bot.vercel.app/1phantomsans0.8-bold.ttf"
+        new URL("./fonts/phantomsans0.8-regular.ttf", import.meta.url),
+        new URL("./fonts/phantomsans0.8-medium.ttf", import.meta.url),
+        new URL("./fonts/phantomsans0.8-bold.ttf", import.meta.url)
     ].map(x => fetch(x).then(r => r.arrayBuffer())));
 
     return [
