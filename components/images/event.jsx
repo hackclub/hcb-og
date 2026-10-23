@@ -16,12 +16,12 @@ export function AvatarRow({ avatars }) {
     )
 }
 
-function Image({ avatars, name, balance, background, preview = false }) {
+function Image({ avatars, name, balance, background, preview = false, width = Image.size.width, height = Image.size.height, nameSize = 108 }) {
     return (
         <div style={{
             display: 'flex',
-            width: '1200px',
-            height: '700px',
+            width: `${width}px`,
+            height: `${height}px`,
             padding: '40px',
             flexDirection: 'column',
             alignItems: 'center',
@@ -32,7 +32,7 @@ function Image({ avatars, name, balance, background, preview = false }) {
             fontWeight: 400,
             fontFamily: '"Phantom Sans 0.7"',
         }}>
-            <img src={background || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"} width="1200" height="700" style={{
+            <img src={background || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"} width={width} height={height} style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
@@ -45,8 +45,8 @@ function Image({ avatars, name, balance, background, preview = false }) {
                 background: 'linear-gradient(131deg, rgba(10, 5, 5, 0.99) 0%, rgba(40, 2, 2, 0.60) 16.09%, rgba(29, 3, 3, 0.13) 100%)',
                 left: 0,
                 zIndex: 3,
-                width: '1200px',
-                height: '700px'
+                width: `${width}px`,
+                height: `${height}px`
             }}></div>
             <div style={{
                 position: 'absolute',
@@ -54,8 +54,8 @@ function Image({ avatars, name, balance, background, preview = false }) {
                 backgroundColor: '#00000077',
                 left: 0,
                 zIndex: 2,
-                width: '1200px',
-                height: '700px'
+                width: `${width}px`,
+                height: `${height}px`
             }}></div>
 
             <svg style={{
@@ -76,7 +76,7 @@ function Image({ avatars, name, balance, background, preview = false }) {
                 flexDirection: 'column'
             }}>
                 <h1 style={{
-                    fontSize: '108px',
+                    fontSize: `${nameSize}px`,
                     fontFamily: '"Phantom Sans 0.7"',
                     fontWeight: '700',
                     margin: '0px',

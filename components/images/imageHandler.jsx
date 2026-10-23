@@ -13,7 +13,7 @@ export async function imageHandler (image, propsArgs) {
 
     if (!props) {
         // Don't let crawlers cache the fallback forever in case the org becomes available
-        return new ImageResponse(<Fallback {...await Fallback.fetchProps()} />, {
+        return new ImageResponse(<Fallback {...await Fallback.fetchProps()} {...image.size} />, {
             fonts,
             ...image.size,
             headers: { 'cache-control': 'public, max-age=300' }
