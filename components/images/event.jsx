@@ -132,7 +132,9 @@ Image.size = {
 }
 
 Image.fetchProps = async (slug = 'hq') => {
-    const data = await fetch(`https://bank.hackclub.com/api/v3/organizations/${slug}`).then(r => r.json());
+    const res = await fetch(`https://bank.hackclub.com/api/v3/organizations/${slug}`);
+    if (!res.ok) throw new Error(`HCB API returned ${res.status} for organization "${slug}"`);
+    const data = await res.json();
 
     return {
         name: data.name,
