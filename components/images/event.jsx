@@ -73,7 +73,10 @@ function Image({ avatars, name, balance, background, preview = false, width = Im
                 position: 'relative',
                 zIndex: 5,
                 gap: '16px',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                flexGrow: 1,
+                // Stop at the top of the logo so the balance centers in the space above it
+                marginBottom: '95px'
             }}>
                 <h1 style={{
                     fontSize: `${nameSize}px`,
@@ -89,7 +92,8 @@ function Image({ avatars, name, balance, background, preview = false, width = Im
                     display: 'flex',
                     flexDirection: 'row',
                     gap: '90px',
-                    marginTop: '70px',
+                    flexGrow: 1,
+                    alignItems: 'center',
                     fontFamily: 'Inter'
 
                 }}>
