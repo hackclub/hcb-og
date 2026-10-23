@@ -140,7 +140,7 @@ Image.fetchProps = async (slug = 'hq') => {
         name: data.name,
         avatars: data.users.map(x => x.photo),
         balance: data.balances.balance_cents / 100,
-        background: data.donation_header || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"
+        background: data.donation_header || await fetch(new URL("./default-background.png", import.meta.url)).then(r => r.arrayBuffer())
     }
 }
 
