@@ -16,7 +16,7 @@ export function AvatarRow({ avatars }) {
     )
 }
 
-function Image({ avatars, name, balance, totalRaised, background, preview = false }) {
+function Image({ avatars, name, balance, background, preview = false }) {
     return (
         <div style={{
             display: 'flex',
@@ -89,7 +89,7 @@ function Image({ avatars, name, balance, totalRaised, background, preview = fals
                     display: 'flex',
                     flexDirection: 'row',
                     gap: '90px',
-                    marginTop: '50px',
+                    marginTop: '70px',
                     fontFamily: 'Inter'
 
                 }}>
@@ -98,16 +98,8 @@ function Image({ avatars, name, balance, totalRaised, background, preview = fals
                         flexDirection: 'column',
                         gap: '4px'
                     }}>
-                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>{balance.toLocaleString("en", { style: "currency", currency: "USD" })}</h3>
-                        <span style={{ color: '#E5D1D1', fontSize: '58px', fontFamily: '"Phantom Sans 0.7"' }}>Balance</span>
-                    </div>
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '4px'
-                    }}>
-                        <h3 style={{ fontSize: '70px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>{totalRaised.toLocaleString("en", { style: "currency", currency: "USD" })}</h3>
-                        <span style={{ color: '#E5D1D1', fontSize: '58px', fontFamily: '"Phantom Sans 0.7"' }}>Total Raised</span>
+                        <h3 style={{ fontSize: '77px', margin: '0px', fontFamily: '"Phantom Sans 0.7"', fontWeight: 600 }}>{balance.toLocaleString("en", { style: "currency", currency: "USD" })}</h3>
+                        <span style={{ color: '#E5D1D1', fontSize: '64px', fontFamily: '"Phantom Sans 0.7"' }}>Balance</span>
                     </div>
                 </div>
             </div>
@@ -131,8 +123,7 @@ Image.previewProps = {
 
     ],
     name: "Hack Club HQ",
-    balance: 1_234_567.89,
-    totalRaised: 9_876_543.21
+    balance: 1_234_567.89
 }
 
 Image.size = {
@@ -147,7 +138,6 @@ Image.fetchProps = async (slug = 'hq') => {
         name: data.name,
         avatars: data.users.map(x => x.photo),
         balance: data.balances.balance_cents / 100,
-        totalRaised: data.balances.total_raised / 100,
         background: data.donation_header || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"
     }
 }
