@@ -1,5 +1,5 @@
 // Shown when an organization can't be loaded (e.g. it doesn't exist or isn't public)
-function Fallback({ logo, width }) {
+function Fallback({ logo, width, contentInset = 0 }) {
     return (
         <div style={{
             display: 'flex',
@@ -14,8 +14,8 @@ function Fallback({ logo, width }) {
         }}>
             <img src={logo} width="200" height="200" />
             <span style={{
-                // Shrink on narrow images (e.g. the square embed) so it stays on one line
-                fontSize: `${Math.min(96, Math.floor(width / 9))}px`,
+                // Shrink when content is inset (e.g. the square embed) so it stays on one line
+                fontSize: `${Math.min(96, Math.floor((width - 2 * contentInset) / 9))}px`,
                 fontFamily: '"Phantom Sans 0.7"',
                 fontWeight: 700,
             }}>HCB by Hack Club</span>

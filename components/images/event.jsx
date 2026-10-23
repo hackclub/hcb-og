@@ -16,13 +16,14 @@ export function AvatarRow({ avatars }) {
     )
 }
 
-function Image({ avatars, name, balance, background, preview = false, width = Image.size.width, height = Image.size.height, nameSize = 108 }) {
+function Image({ avatars, name, balance, background, preview = false, nameSize = 108, contentInset = 0 }) {
     return (
         <div style={{
             display: 'flex',
-            width: `${width}px`,
-            height: `${height}px`,
-            padding: '40px',
+            width: '1200px',
+            height: '700px',
+            // contentInset keeps everything inside a narrower centered area (e.g. the square embed)
+            padding: `40px ${40 + contentInset}px`,
             flexDirection: 'column',
             alignItems: 'center',
             position: 'relative',
@@ -32,7 +33,7 @@ function Image({ avatars, name, balance, background, preview = false, width = Im
             fontWeight: 400,
             fontFamily: '"Phantom Sans 0.7"',
         }}>
-            <img src={background || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"} width={width} height={height} style={{
+            <img src={background || "https://cloud-6hhgz2mum-hack-club-bot.vercel.app/0hack_club_bank.png"} width="1200" height="700" style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
@@ -45,8 +46,8 @@ function Image({ avatars, name, balance, background, preview = false, width = Im
                 background: 'linear-gradient(131deg, rgba(10, 5, 5, 0.99) 0%, rgba(40, 2, 2, 0.60) 16.09%, rgba(29, 3, 3, 0.13) 100%)',
                 left: 0,
                 zIndex: 3,
-                width: `${width}px`,
-                height: `${height}px`
+                width: '1200px',
+                height: '700px'
             }}></div>
             <div style={{
                 position: 'absolute',
@@ -54,14 +55,14 @@ function Image({ avatars, name, balance, background, preview = false, width = Im
                 backgroundColor: '#00000077',
                 left: 0,
                 zIndex: 2,
-                width: `${width}px`,
-                height: `${height}px`
+                width: '1200px',
+                height: '700px'
             }}></div>
 
             <svg style={{
                 position: 'absolute',
                 bottom: '40px',
-                left: '40px',
+                left: `${40 + contentInset}px`,
                 zIndex: 5,
             }} width="95" height="95" viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M48.0755 24.035C47.887 23.9495 47.6948 23.8722 47.4996 23.8034L47.4996 17.8125C48.5624 17.8125 49.6816 18.2548 50.4594 18.5962C51.3411 18.9822 52.4663 19.5641 53.6567 20.2439C56.587 21.9584 59.4379 23.8048 62.2008 25.7777C68.5836 30.2842 69.7652 31.1719 76.3172 36.4948C76.5928 36.7705 76.8115 37.0977 76.9607 37.4578C77.1098 37.818 77.1866 38.2039 77.1866 38.5937C77.1866 38.9836 77.1098 39.3695 76.9607 39.7297C76.8115 40.0898 76.5928 40.417 76.3172 40.6927C76.0416 40.9683 75.7144 41.1869 75.3542 41.3361C74.9941 41.4853 74.6081 41.5621 74.2183 41.5621C73.8285 41.5621 73.4425 41.4853 73.0824 41.3361C72.7223 41.1869 72.395 40.9683 72.1194 40.6927C65.3121 35.625 65.0152 35.0283 58.7749 30.6286C56.169 28.7628 53.4784 27.0183 50.7117 25.4006C49.8587 24.8974 48.9786 24.4415 48.0755 24.035ZM46.9236 24.035C47.1908 23.9162 47.3778 23.845 47.4996 23.8034L47.4996 17.8125C46.4367 17.8125 45.3175 18.2548 44.5397 18.5962C43.658 18.9822 42.5328 19.5641 41.3424 20.2439C38.4121 21.9584 35.5612 23.8048 32.7983 25.7777C26.4214 30.2842 25.2339 31.1719 18.6819 36.4948C18.4063 36.7705 18.1876 37.0977 18.0384 37.4578C17.8893 37.818 17.8125 38.2039 17.8125 38.5938C17.8125 38.9836 17.8893 39.3695 18.0384 39.7297C18.1876 40.0898 18.4063 40.417 18.6819 40.6927C18.9575 40.9683 19.2848 41.1869 19.6449 41.3361C20.005 41.4853 20.391 41.5621 20.7808 41.5621C21.1706 41.5621 21.5566 41.4853 21.9167 41.3361C22.2769 41.1869 22.6041 40.9683 22.8797 40.6927C29.69 35.625 29.9869 35.0283 36.2242 30.6286C38.8301 28.7628 41.5207 27.0183 44.2874 25.4006C45.371 24.7802 46.2171 24.3408 46.9236 24.035ZM20.7808 71.25C20.7808 70.4626 21.0936 69.7075 21.6503 69.1508C22.2071 68.594 22.9622 68.2812 23.7496 68.2812L71.2496 68.2812C72.0369 68.2812 72.792 68.594 73.3488 69.1508C73.9055 69.7075 74.2183 70.4626 74.2183 71.25C74.2183 72.0374 73.9055 72.7925 73.3488 73.3492C72.792 73.906 72.0369 74.2187 71.2496 74.2187L23.7496 74.2187C22.9622 74.2187 22.2071 73.906 21.6503 73.3492C21.0936 72.7925 20.7808 72.0374 20.7808 71.25Z" fill="white" />
